@@ -5,11 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VP Monitor</title>
     <link rel="icon" href="monitor.svg" type="image/x-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+        color: #333;
+        transition: 0.3s;
+      }
+
+      .cím {
+        color: #007bff;
+      }
+
+      .cim2 {
+        color: #28a745;
+      }
+
+      .szoveg2 {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .szoveg3 {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .alcim1 {
+        color: #dc3545;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      hr {
+        margin: 20px 0;
+      }
+
+      .sotet-mod {
+        background-color: #333;
+        color: #f4f4f4;
+      }
+    </style>
   </head>
   <body>
     <h1 class="cím">VP Monitor</h1>
     <p>A legjobb monitorok</p>
     <br />
+    <button id="sv-gomb" onclick="toggleMode()">Sötét mód</button>
     <hr />
     <h1 class="cim2">Üdvözlünk a VP Monitor világában!</h1>
     <p class="szoveg2">
@@ -31,5 +87,19 @@
       nálunk megtalálhatod a neked megfelelő monitort. Nézd meg kínálatunkat, és
       válaszd ki a kedvencedet!
     </h1>
+
+    <script>
+      function toggleMode() {
+        document.body.classList.toggle("sotet-mod");
+
+        let button = document.getElementById("sv-gomb");
+        
+        if (document.body.classList.contains("sotet-mod")) {
+          button.textContent = "Világos mód";
+        } else {
+          button.textContent = "Sötét mód";
+        }
+      }
+    </script>
   </body>
 </html>
